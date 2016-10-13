@@ -17,23 +17,9 @@ public class Main {
                 //System.out.println(n);
             }
         }
-        fuel_injection_perfection.answer("1");
-        fuel_injection_perfection.answer("2");
-        fuel_injection_perfection.answer("3");
-        fuel_injection_perfection.answer("4");
-        fuel_injection_perfection.answer("5");
-        fuel_injection_perfection.answer("6");
-        fuel_injection_perfection.answer("7");
-        fuel_injection_perfection.answer("8");
-        fuel_injection_perfection.answer("9");
-        fuel_injection_perfection.answer("10");
-        fuel_injection_perfection.answer("11");
-        fuel_injection_perfection.answer("12");
-        fuel_injection_perfection.answer("13");
-        fuel_injection_perfection.answer("14");
-        fuel_injection_perfection.answer("15");
-        fuel_injection_perfection.answer("16");
-        fuel_injection_perfection.answer("17");
+        fuel_injection_perfection.answer("16072629107794009814226375735900027158421072175583004111656255825555265766874041837397975682235437871913920093763297202377807179285384710653976866362047862205901851662236346478131611907593556712816931273229569712475372911901098151338748315919115594371856794716529813251490644747478936580255808502104065");
+        fuel_injection_perfection.answer("16072629107794009814226375735900027158421072175583004111656255825555265766874041837397975682235437871913920093763297202377807179285384710653976866362047862205901851662236346478131611907593556712816931273229569712475372911901098151338748315919115594371856794716529813251490644747478936580255808502104064");
+
 
 
 
