@@ -14,16 +14,20 @@ public class fuel_injection_perfection_math {
 
         int count = 0;
         while(num.compareTo(one)==1){
+            System.out.println(count);
             if (num.mod(two).compareTo(new BigInteger("0"))==0)
                     num.divide(two);
             else {
                 if((num.add(one).mod(new BigInteger("4")).compareTo(new BigInteger("0"))==0)&&(num.subtract(one).compareTo(two)!=0))
                     num = num.add(one);
+
                 else
                     num = num.subtract(one);;
             }
             count++;
         }
+        System.out.println(count);
+
         return count;
     }
 }
