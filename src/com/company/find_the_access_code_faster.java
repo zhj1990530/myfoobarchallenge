@@ -1,7 +1,7 @@
 package com.company;
 
-import java.util.Arrays;
-import java.util.HashSet;
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * Created by huajunzhang on 10/13/16.
@@ -35,59 +35,46 @@ import java.util.HashSet;
  Output:
  (int) 3
  */
-public class find_the_access_code {
-
-    static class luckytriple<T, U, V> {
-        T a;
-        U b;
-        V c;
-        luckytriple(T a, U b, V c) {
-            this.a = a;
-            this.b = b;
-            this.c = c;
-        }
-        T getA() {
-            return a;
-        }
-        U getB() {
-            return b;
-        }
-        V getC() {
-            return c;
-        }
-    }
-
+public class find_the_access_code_faster {
     public static int answer(int[] l) {
-
-        HashSet<luckytriple> result = new HashSet<luckytriple>();
-        int count = 0;
+        HashMap<Integer,HashSet<Integer>> large =new HashMap<Integer,HashSet<Integer>>();
+        HashMap<Integer,HashSet<Integer>> small =new HashMap<Integer,HashSet<Integer>>();
         Arrays.sort(l);
-        for (int i = 0; i < l.length; i++) {
-            int U=l[i];
-            int V=0;
-            int T=0;
-            for (int j = i+1; j < l.length; j++) {
+        for(int i=0;i<l.length;i++){
 
-                if(l[j]%l[i]==0) {
-                    V=l[j];
-                    for (int k = i-1; k >= 0; k--) {
-                        if(l[i]%l[k]==0) {
-                            T=l[k];
-                            if(V!=0&&T!=0){
-
-                                luckytriple luckyT= new luckytriple(T,U,V);
-
-                                if(result.add(luckyT)){
-                                    System.out.println(T+"+"+U+"+"+V);
-                                    count++;
-                                }
-                            }
-                        }
+            if(!large.containsKey(l[i])) {
+                large.put(l[i], new HashSet<Integer>());
+                small.put(l[i], new HashSet<Integer>());
+            }
+                for(int j=i+1;j<l.length;j++){
+                    if(l[j]%l[i]==0){
+                        large.get(l[i]).add(l[j]);
                     }
+                }
+                for(int k=i-1;k>=0;k--){
+                    if(l[i]%l[k]==0){
+                        small.get(l[i]).add(l[k]);
+                    }
+                }
+        }
+        int result=0;
+        for(Integer key: large.keySet()){
+            System.out.println("key ="+key);
+            int a = large.get(key).size();
+            int b = small.get(key).size();
+            System.out.println(a +"*"+ b +"="+ a*b);
+            result=result+a*b;
+            for(Integer behind: large.get(key)){
+                for(Integer front: small.get(key)) {
+                    System.out.println(front +" "+ key +" "+ behind);
                 }
             }
         }
-        return count;
+        //System.out.println(result);
+        System.out.println("-----------------------------------------------------------------------------");
 
-    }
+        return result;
+
+        }
 }
+
