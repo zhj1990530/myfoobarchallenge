@@ -40,13 +40,20 @@ public class Main {
             System.out.println(Arrays.toString(ppp[i]));
         }*/
         //lovely_lucky_lambs.answer(n);
-        int[] l= new int[] {1,2,1,3,4,1,4,5,6,2,2};
-        int[] v= new int[] {1,1,1,1,1};
+        //int[] test1= new int[] {1,1,2,2,4,4,8,8};
+        //int[] test2= new int[] {1,2,2,4,4,4};
+        //int[] test3= new int[] {1,2};
+        int[] test4= new int[] {1,2,2,4,8};
 
-        int answer= find_the_access_code_faster.answer(l);
+
+        /*int answer= find_the_access_code_faster.answer(test1);
         System.out.println(answer);
-        int answer1= find_the_access_code_faster.answer(v);
-        System.out.println(answer1);
+        int answer1= find_the_access_code_faster.answer(test2);
+        System.out.println(answer1);*/
+        int answer2= find_access_code_3dot0.answer(test4);
+        System.out.println(answer2);
+        int answer3= find_the_access_code_faster.answer(test4);
+        System.out.println(answer3);
 
         //int answer2= find_the_access_code_faster.answer(l);
         //System.out.println(answer2);

@@ -39,9 +39,15 @@ public class find_the_access_code_faster {
     public static int answer(int[] l) {
         HashMap<Integer,HashSet<Integer>> large =new HashMap<Integer,HashSet<Integer>>();
         HashMap<Integer,HashSet<Integer>> small =new HashMap<Integer,HashSet<Integer>>();
+        HashMap<Integer,Integer> AAA =new HashMap<Integer,Integer>();
+
         Arrays.sort(l);
         for(int i=0;i<l.length;i++){
-
+            if(!AAA.containsKey(l[i])) {
+                AAA.put(l[i],1);
+            }else{
+                AAA.put(l[i],AAA.get(l[i])+1);
+            }
             if(!large.containsKey(l[i])) {
                 large.put(l[i], new HashSet<Integer>());
                 small.put(l[i], new HashSet<Integer>());
@@ -72,10 +78,16 @@ public class find_the_access_code_faster {
                 }
             }
         }
+        int error=0;
+        for(Integer key: AAA.keySet()){
+            System.out.println("key ="+key);
+            if(AAA.get(key)==2)
+                error++;
+        }
         //System.out.println(result);
         System.out.println("-----------------------------------------------------------------------");
 
-        return result;
+        return result-error;
 
         }
 }
