@@ -59,6 +59,8 @@ public class find_the_access_code_faster {
         }
         int result=0;
         for(Integer key: large.keySet()){
+            System.out.println("***********************************************************************");
+
             System.out.println("key ="+key);
             int a = large.get(key).size();
             int b = small.get(key).size();
@@ -71,7 +73,7 @@ public class find_the_access_code_faster {
             }
         }
         //System.out.println(result);
-        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------");
 
         return result;
 
